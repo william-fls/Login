@@ -4,7 +4,8 @@
   "description": "API de exemplo com autenticação JWT, Express e Sequelize",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "db:setup": "node init-db.js",
+    "start": "node init-db.js && node server.js"
   },
   "keywords": [],
   "author": "",
