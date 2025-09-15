@@ -20,4 +20,9 @@ User.beforeCreate(async (user) => {
   user.password = await bcrypt.hash(user.password, salt);
 });
 
+// Método para verificar a senha (boa prática)
+User.prototype.checkPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
 module.exports = User;

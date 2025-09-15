@@ -1,14 +1,14 @@
+require('dotenv').config(); // Garante que as variáveis de ambiente sejam carregadas
 const { Sequelize } = require('sequelize');
-const { database } = require('./config');
 
 const sequelize = new Sequelize(
-  database.name,
-  database.user,
-  database.password,
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: database.host,
-    dialect: database.dialect,
-    logging: false, // Descomente para ver os logs do SQL
+    host: process.env.DB_HOST,
+    dialect: 'mysql',
+    logging: false,
   }
 );
 

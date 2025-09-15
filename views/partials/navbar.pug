@@ -1,0 +1,10 @@
+nav.navbar
+  a.navbar-brand(href="/") Início
+  div.navbar-links
+    if user
+      span Bem-vindo, #{user.username}!
+      a(href="/products") Produtos
+      a(href="/logout") Sair
+    else
+      a(href="/login") Entrar
+      a(href="/register") Registrar
